@@ -6,8 +6,8 @@ WITH
 -- date parameters
 DATE_PARAMS AS (
   SELECT
-    CAST('2025-11-01' AS date) AS START_DATE,
-    CAST('2025-12-22' AS date)    AS END_DATE
+    CAST('YYYY-MM-DD' AS date) AS START_DATE,
+    CAST('YYYY-MM-DD' AS date)    AS END_DATE
 ),
 -- filter encounters to date
 date_filtered_enc AS (
