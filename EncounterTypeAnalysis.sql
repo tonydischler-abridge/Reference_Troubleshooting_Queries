@@ -7,8 +7,8 @@ WITH
 -- date parameters
 DATE_PARAMS AS (
   SELECT
-    CAST('2025-06-09' AS date) AS START_DATE,
-    CAST('2026-02-17' AS date) AS END_DATE
+    CAST('2025-01-01' AS date) AS START_DATE,
+    CAST('2026-05-01' AS date) AS END_DATE
 ),
 -- filter encounters to date (no encounter type filter)
 date_filtered_enc AS (
@@ -17,7 +17,7 @@ date_filtered_enc AS (
   CROSS JOIN DATE_PARAMS dp
   WHERE e.CONTACT_DATE >= dp.START_DATE
     AND e.CONTACT_DATE <= dp.END_DATE
-    AND (e.APPT_STATUS_C IN (2,6) OR e.APPT_STATUS_C IS NULL) -- checking for completed or arrived or null
+    AND (e.APPT_STATUS_C IN ('2','6') OR e.APPT_STATUS_C IS NULL) -- checking for completed or arrived or null
 ),
 -- which encounters touched SDE
 ambient_via_sde AS (
