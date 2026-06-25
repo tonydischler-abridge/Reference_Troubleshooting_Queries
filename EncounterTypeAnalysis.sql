@@ -7,8 +7,8 @@ WITH
 -- date parameters
 DATE_PARAMS AS (
   SELECT
-    CAST('2025-01-01' AS date) AS START_DATE,
-    CAST('2026-05-01' AS date) AS END_DATE
+    CAST('YYYY-MM-DD' AS date) AS START_DATE, -- Update with desired date range of encounters to analyze
+    CAST('YYYY-MM-DD' AS date) AS END_DATE    -- Update with desired date range of encounters to analyze
 ),
 -- filter encounters to date (no encounter type filter)
 date_filtered_enc AS (
